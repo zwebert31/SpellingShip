@@ -9,37 +9,38 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    var ship: Ship!
+    
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 45;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
+        let camera = SKCameraNode()
         
-        self.addChild(myLabel)
+        self.addChild(camera)
+        
+        self.camera = camera
+        self.anchorPoint = CGPointMake(0.5, 0.5)
+        self.ship = self.childNodeWithName("ship") as! Ship
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
-        
-        for touch in touches {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-        }
+        guard let touch = touches.first else { return }
+        self.ship.rotateToTouch(touch)
+        self.ship.thrustOn = true
     }
-   
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        self.ship.rotateToTouch(touch)
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.ship.thrustOn = false
+    }
+
     override func update(currentTime: CFTimeInterval) {
+        self.ship.update(currentTime)
+        self.camera?.runAction(SKAction.moveTo(ship.position, duration: 0.15))
         /* Called before each frame is rendered */
     }
+    
+    
 }

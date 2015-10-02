@@ -16,6 +16,10 @@
 		ED8031F31BB1BA0900CE4799 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED8031F11BB1BA0900CE4799 /* LaunchScreen.storyboard */; };
 		ED8031FE1BB1BA0900CE4799 /* SpellingShipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8031FD1BB1BA0900CE4799 /* SpellingShipTests.swift */; };
 		ED8032091BB1BA0900CE4799 /* SpellingShipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8032081BB1BA0900CE4799 /* SpellingShipUITests.swift */; };
+		ED8032171BB1BD9700CE4799 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8032161BB1BD9700CE4799 /* Ship.swift */; settings = {ASSET_TAGS = (); }; };
+		ED8032191BB1C33800CE4799 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8032181BB1C33800CE4799 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
+		ED8032241BB1CAB300CE4799 /* thrust.sks in Resources */ = {isa = PBXBuildFile; fileRef = ED8032221BB1CAB300CE4799 /* thrust.sks */; settings = {ASSET_TAGS = (); }; };
+		ED8032251BB1CAB300CE4799 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = ED8032231BB1CAB300CE4799 /* spark.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		ED8032041BB1BA0900CE4799 /* SpellingShipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpellingShipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8032081BB1BA0900CE4799 /* SpellingShipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellingShipUITests.swift; sourceTree = "<group>"; };
 		ED80320A1BB1BA0900CE4799 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED8032161BB1BD9700CE4799 /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
+		ED8032181BB1C33800CE4799 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ED8032221BB1CAB300CE4799 /* thrust.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = thrust.sks; sourceTree = "<group>"; };
+		ED8032231BB1CAB300CE4799 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,10 @@
 				ED8031EF1BB1BA0900CE4799 /* Assets.xcassets */,
 				ED8031F11BB1BA0900CE4799 /* LaunchScreen.storyboard */,
 				ED8031F41BB1BA0900CE4799 /* Info.plist */,
+				ED8032161BB1BD9700CE4799 /* Ship.swift */,
+				ED8032181BB1C33800CE4799 /* Extensions.swift */,
+				ED8032221BB1CAB300CE4799 /* thrust.sks */,
+				ED8032231BB1CAB300CE4799 /* spark.png */,
 			);
 			path = SpellingShip;
 			sourceTree = "<group>";
@@ -198,6 +210,7 @@
 				TargetAttributes = {
 					ED8031E01BB1BA0900CE4799 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = UXSGU2RD2T;
 					};
 					ED8031F81BB1BA0900CE4799 = {
 						CreatedOnToolsVersion = 7.0;
@@ -235,9 +248,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED8031E71BB1BA0900CE4799 /* GameScene.sks in Resources */,
+				ED8032251BB1CAB300CE4799 /* spark.png in Resources */,
 				ED8031F31BB1BA0900CE4799 /* LaunchScreen.storyboard in Resources */,
 				ED8031F01BB1BA0900CE4799 /* Assets.xcassets in Resources */,
 				ED8031EE1BB1BA0900CE4799 /* Main.storyboard in Resources */,
+				ED8032241BB1CAB300CE4799 /* thrust.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8032191BB1C33800CE4799 /* Extensions.swift in Sources */,
 				ED8031E91BB1BA0900CE4799 /* GameScene.swift in Sources */,
+				ED8032171BB1BD9700CE4799 /* Ship.swift in Sources */,
 				ED8031EB1BB1BA0900CE4799 /* GameViewController.swift in Sources */,
 				ED8031E51BB1BA0900CE4799 /* AppDelegate.swift in Sources */,
 			);
@@ -406,10 +423,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SpellingShip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.birdcat.SpellingShip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -417,10 +437,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SpellingShip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.birdcat.SpellingShip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -493,6 +516,7 @@
 				ED80320F1BB1BA0900CE4799 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED8032101BB1BA0900CE4799 /* Build configuration list for PBXNativeTarget "SpellingShipTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +525,7 @@
 				ED8032121BB1BA0900CE4799 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED8032131BB1BA0900CE4799 /* Build configuration list for PBXNativeTarget "SpellingShipUITests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +534,7 @@
 				ED8032151BB1BA0900CE4799 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
